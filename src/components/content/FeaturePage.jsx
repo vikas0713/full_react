@@ -1,16 +1,14 @@
 var React = require('react');
-var Header =require('../common/Header.jsx');
-var Footer =require('../common/Footer.jsx');
+var Header =require('./common/Header.jsx');
+var Footer =require('./common/Footer.jsx');
 
 var FeaturePage = React.createClass({
-    getInitialState: function(){
-        return {
-            messages : [
-            "hello from About page",
-            "The Third Router"
-            ]
-        }
-    },
+  getInitialState:function(){
+    return { counter : 0}
+  },
+  increment: function(){
+    this.setState({ counter: this.state.counter + 1});
+  },
     render: function(){
         return (
         <div>
@@ -39,15 +37,16 @@ var FeaturePage = React.createClass({
                 <div className="col s12 m4">
                   <div className="icon-block">
                     <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
-                    <h5 className="center">Easy to work with</h5>
-
-                    <p className="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                    <h5 className="center">This is power! click the button</h5>
+                    <button className="btn-large waves-effect waves-light teal center" onClick={this.increment}>Click Me</button>
+                    <h4 className="center">{this.state.counter}</h4>
                   </div>
                 </div>
               </div>
               </div>
 
             </div>
+            <Footer/>
   </div>
         );
     }

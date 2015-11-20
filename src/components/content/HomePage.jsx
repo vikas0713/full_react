@@ -1,22 +1,18 @@
 var React = require('react');
-var Header= require('../common/Header.jsx');
-var Footer= require('../common/Footer.jsx');
+var Header= require('./common/Header.jsx');
+var Footer= require('./common/Footer.jsx');
+var Link = require('react-router').Link;
 
 
 var HomePage = React.createClass({
     getInitialState: function(){
-        return {
-            messages : [
-            "hello from About page",
-            "The Third Router"
-            ]
-        }
+      return {
+        src : "./img/background1.jpg"
+      };
     },
     render: function(){
-        
         return (
-            
-        <div> 
+        <div>
             <Header/>
         <div className="parallax-container">
         <div className="section no-pad-bot">
@@ -27,11 +23,11 @@ var HomePage = React.createClass({
               <h5 className="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
             </div>
             <div className="row center">
-              <a href="#index" className="btn-large waves-effect waves-light teal lighten-1">Don't Click</a>
+              <Link to="feature" className="btn-large waves-effect waves-light teal lighten-1">Dont Click</Link>
             </div>
           </div>
         </div>
-        <div className="parallax"><img src="./img/background1.jpg"/></div>
+        <div className="parallax"><img src={this.state.src}/></div>
     </div>
     <Footer/>
     </div>

@@ -1,6 +1,6 @@
 var React = require('react');
-var Header =require('../common/Header.jsx');
-var Footer =require('../common/Footer.jsx');
+var Header =require('./common/Header.jsx');
+var Footer =require('./common/Footer.jsx');
 
 
 var AboutMe =React.createClass({
@@ -13,7 +13,7 @@ var AboutMe =React.createClass({
         }
     },
     render: function(){
-        
+
         return (
         <div>
             <Header/>
@@ -30,10 +30,10 @@ var AboutMe =React.createClass({
             </div>
           </div>
             <Footer/>
-        </div>    
+        </div>
         );
     }
-    
+
 });
 
 module.exports = AboutMe;
